@@ -3,8 +3,6 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        // Load css depending on path
-        const path = window.location.pathname.split('/')
         // Setup load script function
         jQuery.loadScript = function (url, callback) {
             jQuery.ajax({
@@ -22,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="/src/css/style.css">
 </head>
 <body>
+    <noscript> Well mate, you <i>really</i> want to turn on javascript for this site</noscript>
     <div id="main-container">
         
     </div>

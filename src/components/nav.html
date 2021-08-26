@@ -9,9 +9,8 @@
     Object.keys(sitemap).forEach(key => {
         const value = sitemap[key]
         let anchor = $("<a />").attr("href", value).text(key)
-        if (window.location.pathname == value) {
-            anchor.addClass("current")
-        }
         $("#linklist").append(anchor)
     })
+    const refreshNavLocation = () => {
+    }
 </script>
