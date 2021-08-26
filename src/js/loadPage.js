@@ -6,15 +6,16 @@ const standarizeAnchors = () => {
     const anchorAmt = anchors.length;
     for (let i = 0; i < anchorAmt; i++) {
       const anchor = anchors[i];
-      anchor.rel = "no-refresh"
-      anchor.onclick = () => {
-        goto(anchor.pathname);
-        return false
-      };
-      if (window.location.pathname == anchor.pathname) {
-        anchor.classList.add("current");
-      } else {
-        anchor.classList.remove("current");
+      if (anchor.href.includes(host)) {
+        anchor.onclick = () => {
+          goto(anchor.pathname);
+          return false;
+        };
+        if (window.location.pathname == anchor.pathname) {
+          anchor.classList.add("current");
+        } else {
+          anchor.classList.remove("current");
+        }
       }
     }
   });
@@ -25,7 +26,7 @@ const loadContents = (requestedPath) => {
   if (requestedPath == "/") {
     finalPath += "/home";
   } else {
-    finalPath += requestedPath
+    finalPath += requestedPath;
   }
   finalPath += ".html";
   $.get({
