@@ -38,29 +38,32 @@ body {
     -o-transition: 200ms;
 }
 
-#navbar a.current {
-    margin-top: 5px;
-    border-width: 0 0 5px 0;
+#navbar a:hover {
+    margin-top: 3px;
+    border-width: 0 0 7px 0;
     background-color: #306230aa;
 }
 
-#navbar a:hover {
-    margin-top: 7px;
-    border-width: 0 0 3px 0;
+#navbar a.current {
+    margin-top: 5px;
+    border-width: 0 0 5px 0;
     background-color: #30623094;
 }
 
+#navbar a.current:hover {
+    margin-top: 6px;
+    border-width: 0 0 4px 0;
+}
+
 #navbar a:active {
-    margin-top: 10px;
+    margin-top: 9px;
     border-width: 0 0 0 0;
     background-color: #30623080;
 }
 
-
 #navbar a:visited {
     color: inherit
 }
-
 
 #footer {
     position: fixed;
