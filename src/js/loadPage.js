@@ -33,18 +33,17 @@ const loadContents = (requestedPath) => {
     success: (data, textStatus, jqXhr) => {
       $(() => {
         $("#contents").html(data);
+        standarizeAnchors();
       });
     },
     error: (jqXhr, textStatus, errorThrown) => {
       $(() => {
         $("#contents").load("/src/pages/errorPage.html", undefined, () => {
-          $("#errorText").text(errorThrown);
+          $("#errorText").text(`${errorThrown}; ${textStatus}`);
           $("#errorCode").text(jqXhr.status);
+          standarizeAnchors();
         });
       });
-    },
-    complete: () => {
-      standarizeAnchors();
     },
   });
 };
