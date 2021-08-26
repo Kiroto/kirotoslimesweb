@@ -3,18 +3,29 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
+        // Load css depending on path
         const path = window.location.pathname.split('/')
         const backpedals = Math.max(0, path.length - 2)
         let backpedalString = ""
         for (let i = 0; i < backpedals; i++) {
             backpedalString += "../";
         }
-        $('head').append(`<link rel="stylesheet" type="text/css" href="${backpedalString}src/css/style.css">`);
+
+        // Setup load script function
+        jQuery.loadScript = function (url, callback) {
+            jQuery.ajax({
+                url: url,
+                dataType: 'script',
+                success: callback,
+                async: true
+            });
+        }
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiroto's Slimes Web</title>
+    <link rel="stylesheet" type="text/css" href="/src/css/style.css">
 </head>
 <body>
     <div id="main-container">
@@ -27,14 +38,7 @@
     <div id="footer">
     </div>
     <script>
-        // Rendering function
-        $(()=>{
-            $("#header").load(`${backpedalString}/src/components/header.html`)
-            $("#main-nav").load(`${backpedalString}/src/components/nav.html`)
-            $("#footer").load(`${backpedalString}/src/components/footer.html`)
-        })
-        const urlSearchParams = new URLSearchParams(window.location.search);
-        const params = Object.fromEntries(urlSearchParams.entries());
+        $.loadScript(`${backpedalString}/src/js/loadPage.js`)
     </script>
 </body>
 </html>
