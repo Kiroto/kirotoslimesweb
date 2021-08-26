@@ -1,5 +1,10 @@
+@font-face {
+    font-family: "munro";
+    src: url("/src/fonts/munro-webfont.woff") format("woff");
+}
 * {
-    margin: 0
+    margin: 0;
+    font-family: "munro";
 }
 
 body {
@@ -9,9 +14,53 @@ body {
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#main-container {
-    min-height: 100%;
+#navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
 }
+
+#navbar a {
+    padding: 5px;
+    background-color: #306230;
+    border-bottom-color: #0f380f;
+    border-width: 0 0 10px 0;
+    border-style: solid;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    flex-grow: 1;
+    display: inline-block;
+    transition: 200ms;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
+    -ms-transition: 200ms;
+    -o-transition: 200ms;
+}
+
+#navbar a.current {
+    margin-top: 5px;
+    border-width: 0 0 5px 0;
+    background-color: #306230aa;
+}
+
+#navbar a:hover {
+    margin-top: 7px;
+    border-width: 0 0 3px 0;
+    background-color: #30623094;
+}
+
+#navbar a:active {
+    margin-top: 10px;
+    border-width: 0 0 0 0;
+    background-color: #30623080;
+}
+
+
+#navbar a:visited {
+    color: inherit
+}
+
 
 #footer {
     position: fixed;

@@ -1,0 +1,12 @@
+<header id="header"></header>
+<nav id="navbar"></nav>
+<main id="contents"></main>
+<footer id="footer"></footer>
+<script>
+    $(() => {
+        $("#header").load(`/src/components/header.html`)
+        $("#navbar").load(`/src/components/nav.html`)
+        $("#footer").load(`/src/components/footer.html`)
+    });
+    //$("#main_container").load(`/src/components/footer.html`);
+</script>

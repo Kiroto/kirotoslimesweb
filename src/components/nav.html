@@ -1,7 +1,17 @@
-<nav>
-  <ul>
-    <a href="/"><li>Home</li></a>
-    <a href="/reviews"><li>Reviews</li></a>
-    <a href="/blog"><li>Blog</li></a>
-  </ul>
-</nav>
+<ul id="linklist">
+</ul>
+<script>
+    const sitemap = {
+        "Home": "/",
+        "Reviews": "/reviews",
+        "Blog": "/blog"
+    }
+    Object.keys(sitemap).forEach(key => {
+        const value = sitemap[key]
+        let anchor = $("<a />").attr("href", value).text(key)
+        if (window.location.pathname == value) {
+            anchor.addClass("current")
+        }
+        $("#linklist").append(anchor)
+    })
+</script>
