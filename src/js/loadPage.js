@@ -22,7 +22,6 @@ const standarizeAnchors = () => {
 
 const loadContents = (requestedPath) => {
   let finalPath = "/src/pages";
-  console.log(requestedPath);
   if (requestedPath == "/") {
     finalPath += "/home";
   } else {
