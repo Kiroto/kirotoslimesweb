@@ -23,12 +23,9 @@
                     reviewItemContents.append(reviewItemText)
                     reviewItem.append(reviewItemContents)
                     reviewList.append(reviewItem)
-                    // Not optimized at all!
-                    standarizeAnchors()
+                    standarizeAnchor(reviewItem[0])
                 })
             });
-            console.log("standarize?")
-            console.log(reviewList)
         })
     })
 </script>

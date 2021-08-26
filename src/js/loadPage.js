@@ -1,23 +1,26 @@
 const host = window.location.host;
 
+const standarizeAnchor = anchor => {
+  if (anchor.href.includes(host)) {
+    anchor.onclick = () => {
+      goto(anchor.pathname);
+      return false;
+    };
+    if (window.location.pathname == anchor.pathname) {
+      anchor.classList.add("current");
+    } else {
+      anchor.classList.remove("current");
+    }
+  }
+}
+
 const standarizeAnchors = () => {
   $(() => {
     const anchors = $("a");
     const anchorAmt = anchors.length;
     for (let i = 0; i < anchorAmt; i++) {
       const anchor = anchors[i];
-      console.log(anchor)
-      if (anchor.href.includes(host)) {
-        anchor.onclick = () => {
-          goto(anchor.pathname);
-          return false;
-        };
-        if (window.location.pathname == anchor.pathname) {
-          anchor.classList.add("current");
-        } else {
-          anchor.classList.remove("current");
-        }
-      }
+      standarizeAnchor(anchor)
     }
   });
 };
