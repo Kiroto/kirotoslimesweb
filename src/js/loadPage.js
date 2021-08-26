@@ -8,7 +8,7 @@ const standarizeAnchors = () => {
       const anchor = anchors[i];
       anchor.rel = "no-refresh"
       anchor.onclick = () => {
-        goto(anchor.href);
+        goto(anchor.pathname);
         return false
       };
       if (window.location.pathname == anchor.pathname) {
@@ -25,6 +25,8 @@ const loadContents = (requestedPath) => {
   console.log(requestedPath);
   if (requestedPath == "/") {
     finalPath += "/home";
+  } else {
+    finalPath += requestedPath
   }
   finalPath += ".html";
   $.get({
