@@ -6,6 +6,7 @@ const standarizeAnchors = () => {
     const anchorAmt = anchors.length;
     for (let i = 0; i < anchorAmt; i++) {
       const anchor = anchors[i];
+      console.log(anchor)
       if (anchor.href.includes(host)) {
         anchor.onclick = () => {
           goto(anchor.pathname);
