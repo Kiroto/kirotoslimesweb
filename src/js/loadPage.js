@@ -17,7 +17,6 @@ const standarizeAnchors = () => {
         anchor.classList.remove("current");
       }
     }
-    console.log("Anchors ready!");
   });
 };
 
