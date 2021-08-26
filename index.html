@@ -5,12 +5,6 @@
     <script>
         // Load css depending on path
         const path = window.location.pathname.split('/')
-        const backpedals = Math.max(0, path.length - 2)
-        let backpedalString = ""
-        for (let i = 0; i < backpedals; i++) {
-            backpedalString += "../";
-        }
-
         // Setup load script function
         jQuery.loadScript = function (url, callback) {
             jQuery.ajax({
