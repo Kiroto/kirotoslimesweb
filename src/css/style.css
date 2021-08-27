@@ -27,6 +27,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 200%;
 }
 
+img {
+    max-width: 100%;
+}
+
 a.review-item {
     color: white;
     text-decoration: inherit;
@@ -66,7 +70,8 @@ img.review-item-img {
 }
 
 #contents {
-    margin: 1cm 2cm;
+    width: 700px;
+    margin: auto;
 }
 
 #contents p {

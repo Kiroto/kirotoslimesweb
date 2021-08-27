@@ -6,7 +6,15 @@ const standarizeAnchor = anchor => {
       goto(anchor.pathname);
       return false;
     };
-    if (window.location.pathname == anchor.pathname) {
+    const pn = window.location.pathname
+    console.log(pn)
+    if (pn == "/") {
+      if (anchor.pathname == "/") {
+        anchor.classList.add("current");
+      } else {
+        anchor.classList.remove("current");
+      }
+    } else if (anchor.pathname != "/" && pn.includes(anchor.pathname)) {
       anchor.classList.add("current");
     } else {
       anchor.classList.remove("current");
