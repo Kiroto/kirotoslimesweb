@@ -19,6 +19,7 @@
                     let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(pubDate);
                     titleContainer.append($("<div />", {"class": "review-item-publication", text: `${da}-${mo}-${ye}`}))
                     reviewItemText.append(titleContainer)
+                    reviewItemText.append($("<div />", {"class": "review-item-author", text: `By: ${data.author}`}))
                     reviewItemText.append($("<div />", {"class": "review-item-description", text: data.description}))
                     reviewItemContents.append(reviewItemText)
                     reviewItem.append(reviewItemContents)

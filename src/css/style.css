@@ -1,14 +1,19 @@
 @font-face {
     font-family: "munro";
     src: url("/src/fonts/munro-webfont.woff") format("woff");
+    size-adjust: 120%;
 }
 * {
     margin: 0;
     font-family: "munro";
 }
 
+a {
+    color: #8bac0f;
+}
+
 a:visited {
-    color: inherit
+    color: #9bbc0f;
 }
 
 body {
@@ -18,16 +23,32 @@ body {
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.review-item {
-    color: inherit;
+h1, h2, h3, h4, h5, h6 {
+    line-height: 200%;
+}
+
+a.review-item {
+    color: white;
     text-decoration: inherit;
+}
+.review-item-publication {
+    color: #8bac0f;
+}
+
+.review-item-author {
+    color: #9bbc0f;
 }
 
 .review-item-container {
+    border-radius: 5px;
     display: flex;
     background-color: #222;
     padding: 5px;
     margin: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .review-item-container > *{
@@ -42,6 +63,15 @@ img.review-item-img {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+
+#contents {
+    margin: 1cm 2cm;
+}
+
+#contents p {
+    margin: 5px 0;
+    line-height: 120%;
 }
 
 #navbar ul {
