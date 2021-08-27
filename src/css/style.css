@@ -73,7 +73,8 @@ img.review-item-img {
 
 #contents {
     color: #ccc;
-    width: 700px;
+    width: min(700px, calc(100% - 20px));
+    padding: 10px;
     margin: auto;
     margin-bottom: 30px
 }
