@@ -1,13 +1,12 @@
 const host = window.location.host;
 
-const standarizeAnchor = anchor => {
+const standarizeAnchor = (anchor) => {
   if (anchor.href.includes(host)) {
     anchor.onclick = () => {
       goto(anchor.pathname);
       return false;
     };
-    const pn = window.location.pathname
-    console.log(pn)
+    const pn = window.location.pathname;
     if (pn == "/") {
       if (anchor.pathname == "/") {
         anchor.classList.add("current");
@@ -20,7 +19,7 @@ const standarizeAnchor = anchor => {
       anchor.classList.remove("current");
     }
   }
-}
+};
 
 const standarizeAnchors = () => {
   $(() => {
@@ -28,17 +27,23 @@ const standarizeAnchors = () => {
     const anchorAmt = anchors.length;
     for (let i = 0; i < anchorAmt; i++) {
       const anchor = anchors[i];
-      standarizeAnchor(anchor)
+      standarizeAnchor(anchor);
     }
   });
 };
 
 const loadContents = (requestedPath) => {
-  let finalPath = "/src/pages";
-  if (requestedPath == "/") {
-    finalPath += "/home";
+  let finalPath = "";
+  if (requestedPath.includes("/reviews/")) {
+    const requestedPathSections = requestedPath.split("/");
+    finalPath = `https://raw.githubusercontent.com/Kiroto/kswcontent/master/reviews/${requestedPathSections[2]}/review`;
   } else {
-    finalPath += requestedPath;
+    finalPath += "/src/pages";
+    if (requestedPath == "/") {
+      finalPath += "/home";
+    } else {
+      finalPath += requestedPath;
+    }
   }
   finalPath += ".html";
   $.get({
